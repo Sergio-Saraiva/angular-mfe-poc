@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Cart</h1>
+
+  <div *ngFor="let product of products">
+    <h1>{{ product.name }}</h1>
+  </div>
+  <span>Total: U$ {{ getTotalCartPrice() }}</span>
+</div>

@@ -1,0 +1,25 @@
+<nav class="px-2 navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home</a>
+      <a class="nav-item nav-link" href="#">Features</a>
+      <a class="nav-item nav-link" href="#">Pricing</a>
+      <a class="nav-item nav-link disabled" href="#">Disabled</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container row">
+  <angular-poc-products
+    class="col"
+    *axLazyElement="elementUrlProducts; errorTemplate: error"
+    (addNewProduct)="addedNewItemEvent($event)"
+  ></angular-poc-products>
+  <angular-poc-cart
+    class="col"
+    *axLazyElement="elementUrlCart; errorTemplate: error"
+    productInput="{{ productsString }}"
+  ></angular-poc-cart>
+  <ng-template #error> Loading of AppVault MFE failed</ng-template>
+</div>
